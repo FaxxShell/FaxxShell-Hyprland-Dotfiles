@@ -1,0 +1,47 @@
+{
+    "include": "~/.config/waybar/modules.jsonc",
+
+    // general settings
+    "position": "top",
+    "output": "HDMI-A-2",
+    "margin-top": 4,
+    "margin-bottom": 0,
+    "layer": "top",
+    "margin-left": 4,
+    "margin-right": 4,
+    "spacing": 8,
+    "fixed-center": true,
+    "exclusive": true,
+
+    // modules
+    "modules-left": [
+        "custom/logo",
+        "clock"
+    ],
+
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+
+    "modules-right": [
+        "cpu",
+        "memory",
+        "pulseaudio",
+        "custom/exit"
+    ],
+
+    // workspaces group (left)
+    "group/launcher": {
+        "orientation": "horizontal",
+        "modules": [
+            "hyprland/workspaces"
+        ]
+    },
+
+    // logo (center)
+    "custom/logo": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wofi --show drun"
+    }
+}

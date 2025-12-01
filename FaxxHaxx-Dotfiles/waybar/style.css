@@ -1,0 +1,164 @@
+/*   _ _ _ _____ __ __ _____ _____ _____
+ *    | | | |  _  |  |  | __  |  _  | __  |
+ *    | | | |     |_   _| __ -|     |    -|
+ *    |_____|__|__| |_| |_____|__|__|__|__|
+ *
+ *    by FaxxHaxx
+ */
+
+/* pywal colors */
+@define-color ws @color4;
+@define-color tt @color1;
+@define-color clock @color3;
+@define-color set @color4;
+@define-color tb rgba(200,200,200,0.2);
+@define-color tbh @color5;
+@define-color text #FFFFFF;
+
+/* general */
+* {
+  font-family: "Ubuntu Nerd Font";
+  border: none;
+  border-radius: 5px;
+}
+
+window#waybar {
+  background: transparent;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  opacity: 1;
+}
+
+/* LOGO + WORKSPACES */
+#custom-logo,
+#workspaces {
+background-color: rgba(40, 42, 54, 0.85);
+color: @text;
+font-size: 16px;
+padding: 2px 8px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* === Logo + Workspaces merged === */
+#custom-logo {
+font-size: 18px;
+padding: 3px 8px 3px 9px;
+margin: 4px 8px;
+border-radius: 10px;
+}
+
+#workspaces {
+font-size: 14px;
+font-weight: bold;
+padding: 2px 8px;
+margin: 4px 6px 4px 0;
+border-radius: 10px;
+}
+
+#workspaces button {
+margin: 0px 1px;
+padding: 0px 4px;
+color: @text;
+transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+background: @ws;
+color: #87B0F9;
+opacity: 0.9;
+}
+
+
+#workspaces button:hover {
+background: @ws;
+opacity: 0.9;
+}
+
+/* TASKBAR */
+#taskbar {
+background-color: rgba(40, 42, 54, 0.85);
+margin: 4px 0;
+padding: 2px 6px;
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+#taskbar button {
+margin: 0px 1px;
+padding: 0px 4px;
+border-radius: 5px;
+}
+
+#taskbar button:hover {
+background: @tbh;
+opacity: 1;
+}
+
+/* CLOCK */
+#clock {
+background-color: rgba(40, 42, 54, 0.85);
+font-size: 14px;
+font-weight: bold;
+color: @text;
+padding: 2px 8px;
+margin: 4px 6px;
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+opacity: 0.9;
+}
+
+/* SYSTEM MODULES */
+#cpu, #temperature, #disk, #memory,
+#pulseaudio, #network, #battery, #custom-music, #bluetooth {
+background-color: rgba(40, 42, 54, 0.85);
+font-size: 14px;
+font-weight: bold;
+color: @text;
+padding: 2px 8px;
+margin: 4px 6px;
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+opacity: 0.9;
+}
+
+#battery.charging, #battery.plugged {
+color: @text;
+background-color: rgba(40, 42, 54, 0.85);
+}
+
+@keyframes blink {
+  to {
+    background-color: @set;
+    color: @text;
+  }
+}
+
+#battery.critical:not(.charging) {
+background-color: #f53c3c;
+color: @text;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: linear;
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+/* TRAY */
+#tray {
+padding: 0px 8px 0px 8px;
+color: @text;
+background-color: rgba(40,42,54,0.85);
+border-radius: 10px;
+box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* POWER BUTTON */
+#custom-exit {
+background-color: rgba(40, 42, 54, 0.85);
+padding: 2px 8px;
+margin: 4px 8px;
+border-radius: 10px;
+font-size: 16px;
+color: @text;
+box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
